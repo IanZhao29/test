@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    姓名 <input type="text" id="name">
+    <button type="button" id="btn">点击</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("按钮被点击了！");
+        }
+    </script>
+    <hr>
+    城市<select id="city">
+        <option value="">请选择城市</option>
+        <option value="">芜湖</option>
+        <option value="">芜湖航空</option>
+        <option value="">芜湖u uuuuuuuu</option>
+    </select>
+
+    <div id="div1">
+        这是一个div
+    </div>
+
+    <h1 id="time"></h1>
+
+    <script>
+        document.getElementById("city").onchange = function(){
+            console.log("城市改变了！");
+        }
+
+        var div1 = document.getElementById("div1");
+        div1.onmouseover = function(){
+            console.log("鼠标悬停");
+        }
+        div1.onmouseout = function(){
+            console.log("鼠标离开");
+        }
+
+        window.onload = function(){
+            console.log("页面加载完成");
+        }
+        var uname = document.getElementById("name");
+        uname.onblur = function(){
+            console.log("文本框失去焦点！");
+        }
+
+        uname.onfocus = function(){
+            console.log("文本框获得焦点！");
+        }
+
+        uname.onkeydown = function(){
+            console.log("按键按下");
+        }
+        uname.onkeyup = function(){
+            console.log("按键松开");
+        }
+
+        function init(){
+            var time = new Date().toLocaleTimeString();
+
+            document.getElementById("time").innerHTML = time;
+
+            setTimeout(init,1000);
+        }
+
+        window.onload = init();
+    </script>
+</body>
+</html>
